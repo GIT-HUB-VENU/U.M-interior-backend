@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Interiors Admin Page</title>
+</head>
+
+<body>
+
+    <div class="interiors-page">
+
+        <a class="add-interior-btn" href="/interiors/add">Add Interior</a>
+
+        <ol class="interior-list">
+            <% interiors.forEach(interior=> { %>
+                <li>
+                    <div class="boxInteriors">
+
+                        <ul>
+
+                            <li>
+                                <img src="<%= interior.image %>" alt="Interior Image">
+                            </li>
+
+                            <li><strong>Interior Name :</strong>
+                                <%= interior.name %>
+                            </li>
+
+                            <li><strong>Description :</strong>
+                                <%= interior.desc %>
+                            </li>
+
+                            <li class="interior-actions">
+                                <a class="edit-btn" href="/interiors/<%= interior._id %>/edit">Edit</a>
+                                <a class="delete-btn" href="/interiors/<%= interior._id %>/delete">Delete</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </li>
+                <% }) %>
+        </ol>
+
+    </div>
+
+</body>
+
+</html>

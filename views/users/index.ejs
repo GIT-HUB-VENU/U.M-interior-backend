@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - User Control</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+    <div class="users-page">
+
+        <h2 class="users-title">Users Admin Page</h2>
+
+        <a class="add-user-btn" href="/users/add">Add User</a>
+
+        <ul class="users-list">
+            <% users.forEach(user=> { %>
+
+                <li class="user-card">
+
+                    <p><strong>Name :</strong>
+                        <%= user.name %>
+                    </p>
+
+                    <p><strong>Email :</strong>
+                        <%= user.email %>
+                    </p>
+
+                    <p><strong>Password :</strong>
+                        <%= user.password %>
+                    </p>
+
+                    <p><strong>Role :</strong>
+                        <%= user.role %>
+                    </p>
+
+                    <div class="user-actions">
+                        <a class="edit-user-btn" href="/users/<%= user._id %>/edit">Edit</a>
+                        <a class="delete-user-btn" href="/users/<%= user._id %>/delete">Delete</a>
+                    </div>
+
+                </li>
+
+                <% }) %>
+        </ul>
+
+    </div>
+
+</body>
+
+</html>

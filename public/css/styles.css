@@ -1,0 +1,406 @@
+/* Layouts  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+body>div {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background: #1f2d3d;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header h2 {
+    font-size: 16px;
+    font-weight: 400;
+    color: #d1d5db;
+}
+
+.header ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 6px 10px;
+    position: relative;
+}
+
+.header ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: 0.3s;
+}
+
+.header ul li a:hover::after {
+    width: 100%;
+}
+
+.header ul li a.active::after {
+    width: 100%;
+}
+
+.header ul li a.active {
+    color: #3498db;
+}
+
+body>div>div:nth-child(2) {
+    padding: 40px;
+    flex: 1;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px;
+    background: #1f2d3d;
+    color: #ddd;
+    font-size: 14px;
+}
+
+/* LOGIN FORM */
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.login-card {
+    width: 360px;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-card h2 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.login-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2c3e50;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: #1a252f;
+}
+
+.login-register {
+    margin-top: 18px;
+    font-size: 14px;
+}
+
+.login-register a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-register a:hover {
+    text-decoration: underline;
+}
+
+/* Register Form */
+
+.register-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.register-form {
+    width: 360px;
+    background: #ffffff;
+    padding: 35px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.register-title {
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.register-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.register-input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2c3e50;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #1a252f;
+}
+
+.register-login-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.register-login-link a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.register-login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Interiors */
+
+.interiors-page h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.add-interior-btn {
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 10px 18px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-interior-btn:hover {
+    background: #2980b9;
+}
+
+.interior-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.boxInteriors {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.boxInteriors:hover {
+    transform: translateY(-5px);
+}
+
+.boxInteriors ul {
+    list-style: none;
+}
+
+.boxInteriors img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.interior-actions {
+    margin-top: 15px;
+}
+
+.edit-btn,
+.delete-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    margin-right: 8px;
+}
+
+.edit-btn {
+    background: #2c3e50;
+}
+
+.edit-btn:hover {
+    background: #1a252f;
+}
+
+.delete-btn {
+    background: #e74c3c;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* users */
+
+.users-page {
+    padding: 10px 40px;
+}
+
+.users-title {
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.add-user-btn {
+    display: inline-block;
+    margin-bottom: 25px;
+    padding: 10px 18px;
+    background: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.add-user-btn:hover {
+    background: #2980b9;
+}
+
+.users-list {
+    list-style: none;
+    padding: 0;
+}
+
+.user-card {
+    background: white;
+    padding: 18px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.user-card p {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.user-actions {
+    margin-top: 10px;
+}
+
+.edit-user-btn,
+.delete-user-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    margin-right: 8px;
+}
+
+.edit-user-btn {
+    background: #2c3e50;
+}
+
+.edit-user-btn:hover {
+    background: #1a252f;
+}
+
+.delete-user-btn {
+    background: #e74c3c;
+}
+
+.delete-user-btn:hover {
+    background: #c0392b;
+}

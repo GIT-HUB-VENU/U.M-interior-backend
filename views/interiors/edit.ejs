@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interior Admin Page</title>
+</head>
+
+<body>
+    <h2>Edit Interior Form</h2>
+    <form action="/interiors/<%= interior._id %>/save" method="POST">
+        <input type="text" name="name" placeholder="Interior Name" value="<%= interior.name %>"><br>
+        <input type="text" name="desc" placeholder="Interior Description" value="<%= interior.desc %>"><br>
+        <input type="number" name="price" placeholder="Interior Price" value="<%= interior.price %>"><br>
+        <input type="text" name="image" placeholder="Image URL" accept="image/*" value="<%= interior.image %>"><br>
+        <button>Save</button>
+    </form>
+</body>
+
+</html>
