@@ -5,6 +5,11 @@ const getinteriors = async (req, res) => {
     res.render("interiors/index", { interiors });
 };
 
+const getInteriorsJSON = async (req, res) => {
+    const interiors = await interiorModel.find();
+    res.json(interiors);
+};
+
 const addInterior = async (req, res) => {
     const interior = req.body;
     await interiorModel.create(interior);
@@ -30,11 +35,12 @@ const editInteriorForm = async (req, res) => {
 const saveInterior = async (req, res) => {
     const id = req.params.id;
     await interiorModel.findByIdAndUpdate(id, req.body);
-    res.redirect("/interiors")
+    res.redirect("/interiors");
 };
 
 export {
     getinteriors,
+    getInteriorsJSON,
     addInterior,
     addInteriorForm,
     deleteInterior,
