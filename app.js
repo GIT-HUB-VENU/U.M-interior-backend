@@ -9,8 +9,10 @@ import homeRouter from "./routes/homeRoute.js";
 import interiorRouter from "./routes/interiorRoute.js";
 import userRouter from "./routes/userRoute.js";
 import authRouter from "./routes/authRoute.js";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 
 dotenv.config();
 
