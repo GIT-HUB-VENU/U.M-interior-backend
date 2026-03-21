@@ -6,10 +6,13 @@ const getinteriors = async (req, res) => {
 };
 
 const getInteriorsJSON = async (req, res) => {
-    const interiors = await interiorModel.find();
-    res.json(interiors);
+    try {
+        const interiors = await interiorModel.find();
+        res.json(interiors); // return JSON
+    } catch (err) {
+        res.status(500).json({ error: "Failed to fetch interiors" });
+    }
 };
-
 const addInterior = async (req, res) => {
     const interior = req.body;
     await interiorModel.create(interior);
@@ -37,6 +40,7 @@ const saveInterior = async (req, res) => {
     await interiorModel.findByIdAndUpdate(id, req.body);
     res.redirect("/interiors");
 };
+
 
 export {
     getinteriors,

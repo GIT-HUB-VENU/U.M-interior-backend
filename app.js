@@ -9,6 +9,7 @@ import homeRouter from "./routes/homeRoute.js";
 import interiorRouter from "./routes/interiorRoute.js";
 import userRouter from "./routes/userRoute.js";
 import authRouter from "./routes/authRoute.js";
+import interiorstoreRouter from "./routes/interiorstoreRoute.js";
 import cors from "cors";
 
 const app = express();
@@ -45,8 +46,10 @@ app.use((req, res, next) => {
 
 
 app.use("/auth", authRouter);
+app.use("/interiorstore", interiorstoreRouter);
 app.use("/", authenticateAdmin, homeRouter);
-app.use("/interiors", authenticateAdmin, interiorRouter);
+app.use("/interiors", authenticateAdmin, interiorRouter); // HTML pages
+app.use("/api/interiors", interiorRouter); // JSON API
 app.use("/users", authenticateAdmin, userRouter);
 
 const startServer = async () => {

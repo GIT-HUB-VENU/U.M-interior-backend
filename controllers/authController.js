@@ -45,23 +45,31 @@ const signup = async (req, res) => {
 };
 
 const signin = async (req, res) => {
-    const { email, password } = req.body;
-    const user = await userModel.findOne({ email });
-    if (user) {
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (isMatch) {
-            const userObj = {
-                name: user.name,
-                email: user.email,
-                role: user.role,
-            };
-            const token = jwt.sign(userObj, SECRET, { expiresIn: "1h" });
-            res.json({ ...userObj, token });
-        } else {
-            res.json({ error: "Invalid Password" });
+    try {
+        const { email, password } = req.body;
+        const user = await userModel.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ success: false, error: "Invalid User" });
         }
-    } else {
-        res.json({ error: "Invalid User" });
+
+        const isMatch = await bcrypt.compare(password, user.password);
+        if (!isMatch) {
+            return res.status(401).json({ success: false, error: "Invalid Password" });
+        }
+
+        const userObj = {
+            name: user.name,
+            email: user.email,
+            role: user.role,
+        };
+        const token = jwt.sign(userObj, SECRET, { expiresIn: "1h" });
+
+        return res.json({ success: true, ...userObj, token });
+
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ success: false, error: "Server error" });
     }
 };
 

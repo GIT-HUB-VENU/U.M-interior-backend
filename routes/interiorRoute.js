@@ -1,19 +1,25 @@
+import express from "express";
 import {
-    getinteriors,
-    addInteriorForm,
+    getinteriors,       // HTML page
     addInterior,
+    addInteriorForm,
     deleteInterior,
     editInteriorForm,
     saveInterior,
+    getInteriorsJSON    // JSON API
 } from "../controllers/interiorController.js";
-import express from "express";
-const interiorRouter = express.Router();
 
-interiorRouter.get("/", getinteriors);
-interiorRouter.get("/add", addInteriorForm);
-interiorRouter.post("/add", addInterior);
-interiorRouter.get("/:id/delete", deleteInterior);
-interiorRouter.get("/:id/edit", editInteriorForm);
-interiorRouter.post("/:id/save", saveInterior);
+const router = express.Router();
 
-export default interiorRouter;
+// HTML routes (require authenticateAdmin)
+router.get("/", getinteriors);
+router.get("/add", addInteriorForm);
+router.post("/add", addInterior);
+router.get("/:id/edit", editInteriorForm);
+router.post("/:id/edit", saveInterior);
+router.get("/:id/delete", deleteInterior);
+
+// JSON API route inside same router
+router.get("/json", getInteriorsJSON); // <--- this is key
+
+export default router;
