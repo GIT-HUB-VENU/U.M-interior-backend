@@ -36,8 +36,16 @@ const editInteriorForm = async (req, res) => {
 };
 
 const saveInterior = async (req, res) => {
-    const id = req.params.id;
-    await interiorModel.findByIdAndUpdate(id, req.body);
+    const { id } = req.params;
+    const { name, desc, price, image } = req.body;
+
+    await interiorModel.findByIdAndUpdate(id, {
+        name,
+        desc,
+        price: Number(price),
+        image
+    }, { new: true, runValidators: true });
+
     res.redirect("/interiors");
 };
 

@@ -44,6 +44,11 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use((req, res, next) => {
+    res.setHeader("Content-Security-Policy", "default-src 'self'; connect-src 'self' http://localhost:5000");
+    next();
+});
+
 
 app.use("/auth", authRouter);
 app.use("/interiorstore", interiorstoreRouter);
