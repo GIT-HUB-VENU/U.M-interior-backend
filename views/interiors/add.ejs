@@ -5,17 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interior Admin Page</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-    <h2>Add Interior Form</h2>
-    <form action="/interiors/add" method="POST">
-        <input type="text" name="name" placeholder="Interior Name"><br>
-        <input type="text" name="desc" placeholder="Interior Description"><br>
-        <input type="number" name="price" placeholder="Interior Price"><br>
-        <input type="text" name="image" placeholder="Image URL" accept="image/*"><br>
-        <button type="submit">Add Interior</button>
-    </form>
+    <div class="add-container">
+        <h2 class="add-title">Add Interior Form</h2>
+        <form action="/interiors/add" method="POST" class="add-form">
+            <input type="text" name="name" placeholder="Interior Name" class="add-input"><br>
+            <input type="text" name="desc" placeholder="Interior Description" class="add-input"><br>
+            <input type="text" name="image" placeholder="Image URL" accept="image/*" class="add-input"><br>
+            <button type="submit" class="add-button">Add Interior</button>
+        </form>
+    </div>
 </body>
 
 </html>

@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interior Admin Page</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
-    <h2>Edit Interior Form</h2>
-    <form action="/interiors/<%= interior._id %>/edit" method="POST">
-        <input type="text" name="name" placeholder="Interior Name" value="<%= interior.name %>"><br>
-        <input type="text" name="desc" placeholder="Interior Description" value="<%= interior.desc %>"><br>
-        <input type="number" name="price" placeholder="Interior Price" value="<%= interior.price %>"><br>
-        <input type="text" name="image" placeholder="Image URL" accept="image/*" value="<%= interior.image %>"><br>
-        <button>Save</button>
-    </form>
+    <div class="edit-wrapper">
+        <h2 class="edit-title">Edit Interior</h2>
+        <form class="edit-form" action="/interiors/<%= interior._id %>/edit" method="POST">
+            <input class="edit-input" type="text" name="name" placeholder="Interior Name" value="<%= interior.name %>">
+            <input class="edit-input" type="text" name="desc" placeholder="Interior Description"
+                value="<%= interior.desc %>">
+            <input class="edit-input" type="text" name="image" placeholder="Image URL" accept="image/*"
+                value="<%= interior.image %>">
+            <button class="edit-btn1">Save</button>
+        </form>
+    </div>
 </body>
 
 </html>
