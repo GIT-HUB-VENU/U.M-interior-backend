@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel - User Control</title>
-  </head>
-  <body>
-    <h2>Add User Form</h2>
-    <form action="/users/add" method="POST">
-      <p><input type="text" name="name" placeholder="Name" /></p>
-      <p><input type="text" name="email" placeholder="Email" /></p>
-      <p><input type="password" name="password" placeholder="Password" /></p>
-      <p><input type="text" name="role" placeholder="Role" /></p>
-      <p><button>Submit</button></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Panel - User Control</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+
+<body>
+  <div class="addUser-container">
+    <h2 class="addUser-title">Add User </h2>
+    <form action="/users/add" method="POST" class="addUser-form">
+      <p><input type="text" name="name" placeholder="Name" class="addUser-input" /></p>
+      <p><input type="text" name="email" placeholder="Email" class="addUser-input" /></p>
+      <p><input type="password" name="password" placeholder="Password" class="addUser-input" /></p>
+      <p><input type="text" name="role" placeholder="Role" class="addUser-input" /></p>
+      <p><button class="addUser-button">Submit</button></p>
     </form>
-  </body>
+  </div>
+</body>
+
 </html>

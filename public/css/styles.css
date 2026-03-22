@@ -643,3 +643,128 @@ body>div>div:nth-child(2) {
         font-size: 16px;
     }
 }
+
+/* styles.css for addUser.ejs */
+
+/* Container */
+.addUser-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Title */
+.addUser-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #333333;
+}
+
+/* Form */
+.addUser-form p {
+    margin-bottom: 15px;
+}
+
+/* Inputs */
+.addUser-input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1.5px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.addUser-input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+/* Button */
+.addUser-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.addUser-button:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+.addUser-button:active {
+    transform: translateY(1px);
+}
+
+/* editUser styles */
+
+.editUser-container {
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.editUser-heading {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: #333333;
+}
+
+.editUser-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.editUser-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.editUser-input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    outline: none;
+}
+
+.editUser-button {
+    padding: 10px 15px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.editUser-button:hover {
+    background-color: #1a252f;
+    transform: translateY(-2px);
+}
+
+.editUser-button:active {
+    transform: translateY(0);
+}

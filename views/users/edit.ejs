@@ -5,16 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Panel - User Control</title>
+    <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-    <h2>User Edit Form</h2>
-    <form action="/users/<%= user._id %>/save" method="POST">
-        <p><input type="text" name="name" value="<%= user.name %>"></p>
-        <p><input type="text" name="email" value="<%= user.email %>"></p>
-        <p><input type="text" name="role" value="<%= user.role %>"></p>
-        <p><button>Save</button></p>
-    </form>
+    <div class="editUser-container">
+        <h2 class="editUser-heading">User Edit</h2>
+        <form class="editUser-form" action="/users/<%= user._id %>/save" method="POST">
+            <p><input class="editUser-input" type="text" name="name" value="<%= user.name %>" placeholder="Name"></p>
+            <p><input class="editUser-input" type="text" name="email" value="<%= user.email %>" placeholder="Email"></p>
+            <p><input class="editUser-input" type="text" name="role" value="<%= user.role %>" placeholder="Role"></p>
+            <p><button class="editUser-button">Save</button></p>
+        </form>
+    </div>
 </body>
 
 </html>
